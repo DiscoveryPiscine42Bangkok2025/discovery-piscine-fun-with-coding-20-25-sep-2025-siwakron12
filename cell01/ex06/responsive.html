@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>responsive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .flex {
+      display: flex;
+      min-height: 100vh; /* Full page height */
+      width: 100%;
+    }
+
+    .g, .r {
+      flex: 1; /* Equal width for both cells */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      padding: 20px;
+    }
+
+    .g {
+      background-color: greenyellow;
+    }
+
+    .r {
+      background-color: rgb(244, 161, 161);
+    }
+
+    /* Responsive stacking on small screens */
+    @media (max-width: 600px) {
+      .flex {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
+    <div class="g">
+      <p>first cell</p>
+    </div>
+    <div class="r">
+      <p>second cell</p>
+    </div>
+  </div>
+</body>
+
+</html>
