@@ -1,0 +1,39 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+td {
+  border: 2px solid #333;
+  text-align: center;
+  font-size: 1.5em;
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+.cell1 { background-color: #ffd6d6; }
+.cell2 { background-color: #d6ffd6; }
+.cell3 { background-color: #d6d6ff; }
+.cell4 { background-color: #fff4d6; }
+.cell5 { background-color: #e0d6ff; }
+
+@media (max-width: 600px) {
+  td {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
