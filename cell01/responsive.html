@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Table</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+    }
+
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td {
+      border: 2px solid #333;
+      text-align: center;
+      font-size: 1.5em;
+      padding: 20px;
+      word-wrap: break-word;
+    }
+
+    /* Optional: make cells colorful for clarity */
+    .cell1 { background-color: #ffd6d6; }
+    .cell2 { background-color: #d6ffd6; }
+    .cell3 { background-color: #d6d6ff; }
+    .cell4 { background-color: #fff4d6; }
+    .cell5 { background-color: #e0d6ff; }
+
+    @media (max-width: 600px) {
+      td {
+        font-size: 1em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <tr>
+      <td class="cell1">Cell 1</td>
+      <td class="cell2">Cell 2</td>
+      <td class="cell3">Cell 3</td>
+      <td class="cell4">Cell 4</td>
+      <td class="cell5">Cell 5</td>
+    </tr>
+  </table>
+
+</body>
+</html>
