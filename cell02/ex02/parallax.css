@@ -1,0 +1,47 @@
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Parallax Sections */
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* First image background */
+.bg1 {
+    background-image: url('https://picsum.photos/id/1018/1920/1080');
+}
+
+/* Second image background */
+.bg2 {
+    background-image: url('https://picsum.photos/id/1015/1920/1080');
+}
+
+/* Middle black section */
+.content {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8em;
+}
