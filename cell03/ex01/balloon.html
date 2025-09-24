@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="balloon"></div>
+
+<script>
+    const balloon = document.getElementById('balloon');
+
+    let size = 200;
+    const minSize = 200;
+    const maxSize = 420;
+    const growStep = 10;
+    const shrinkStep = 5;
+
+    const colors = ['red', 'green', 'blue'];
+    let colorIndex = 0;
+
+    // Change color in forward direction
+    function nextColor() {
+        colorIndex = (colorIndex + 1) % colors.length;
+        return colors[colorIndex];
+    }
+
+    // Change color in reverse direction
+    function prevColor() {
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+        return colors[colorIndex];
+    }
+
+    // Click → Grow balloon
+    balloon.addEventListener('click', () => {
+        size += growStep;
+
+        if (size > maxSize) {
+            // Balloon explodes → reset
+            size = minSize;
+            colorIndex = 0;
+        } else {
+            // Go to next color
+            nextColor();
+        }
+
+        updateBalloon();
+    });
+
+    // Mouse leaves → Shrink balloon
+    balloon.addEventListener('mouseleave', () => {
+        if (size > minSize) {
+            size -= shrinkStep;
+        }
+
+        // Go to previous color
+        prevColor();
+
+        updateBalloon();
+    });
+
+    function updateBalloon() {
+        balloon.style.width = size + 'px';
+        balloon.style.height = size + 'px';
+        balloon.style.backgroundColor = colors[colorIndex];
+    }
+</script>
+
+</body>
+</html>
